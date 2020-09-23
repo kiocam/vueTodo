@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/vue@next" defer></script>
+  <script src="app.js" defer></script>
+  <title>Vue Todo</title>
+</head>
+
+<body>
+<header class="header">
+  <h1>Vue Todo App</h1>
+</header>
+<section id="app">
+<h2>TODO's</h2>
+<input type="text" placeholder="Enter Todo" v-model="userInput">
+<button class="btn" @click="addTodo">Add Todo</button>
+<p v-if="todos.length === 0">Looks like there is nothing to do!</p>
+<ul v-else>
+  <li class="todo" v-for="(todo, index) in todos">{{ todo }} <span @click="removeTodo(index)" class="closeBtn">X</span></li>
+</ul>
+</section>
+<footer class="footer">
+  <h3>By Jason Cameron</h3>
+</footer>
+</body>
+
+</html>
